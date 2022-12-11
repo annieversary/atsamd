@@ -27,6 +27,7 @@ optional = true
 
 [dependencies.atsamd-hal]
 version = "0.14"
+features = ["usb"]
 default-features = false
 
 [dependencies.keypad]

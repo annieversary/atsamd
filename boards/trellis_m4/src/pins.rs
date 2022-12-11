@@ -66,6 +66,9 @@ define_pins!(
     /// Keypad Row 3
     pin row3 = b23,
 
+    pin usb_dm = a24,
+    pin usb_dp = a25,
+
     /// NeoPixels
     pin neopixel = a27,
 
@@ -119,6 +122,11 @@ impl Pins {
             row3: self.row3,
         };
 
+        let usb = Usb {
+            dm: self.usb_dm,
+            dp: self.usb_dp,
+        };
+
         Sets {
             accel,
             analog,
@@ -128,6 +136,7 @@ impl Pins {
             keypad,
             neopixel: self.neopixel,
             port: self.port,
+            usb,
         }
     }
 }
@@ -157,6 +166,15 @@ pub struct Sets {
 
     /// Port
     pub port: Port,
+
+    /// Port
+    pub usb: Usb,
+}
+
+/// Accelerometer pins
+pub struct Usb {
+    pub dm: Pa24<Input<Floating>>,
+    pub dp: Pa25<Input<Floating>>,
 }
 
 /// Accelerometer pins
