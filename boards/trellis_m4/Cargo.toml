@@ -15,7 +15,7 @@ repository = "https://github.com/atsamd-rs/atsamd"
 readme = "README.md"
 
 [package.metadata.docs.rs]
-features = ["adxl343", "keypad-unproven"]
+features = ["adxl343", "keypad-unproven", "usb"]
 
 [dependencies.cortex-m-rt]
 version = "0.7"
@@ -27,7 +27,6 @@ optional = true
 
 [dependencies.atsamd-hal]
 version = "0.14"
-features = ["usb"]
 default-features = false
 
 [dependencies.keypad]
@@ -48,6 +47,7 @@ default = ["rt", "atsamd-hal/samd51g", "atsamd-hal/samd51"]
 rt = ["cortex-m-rt", "atsamd-hal/samd51g-rt"]
 unproven = ["atsamd-hal/unproven"]
 keypad-unproven = ["keypad", "unproven"]
+usb = ["atsamd-hal/usb"]
 
 [profile.dev]
 incremental = false

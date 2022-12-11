@@ -167,7 +167,7 @@ pub struct Sets {
     /// Port
     pub port: Port,
 
-    /// Port
+    /// Usb
     pub usb: Usb,
 }
 
